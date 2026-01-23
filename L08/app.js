@@ -10,6 +10,18 @@ let server = http.createServer((req,res)=>{
         res.end();
         return;
     }
+    if(header == secret){
+        res.statusCode = 201;
+        res.write("Welcome user");
+        res.end();
+        return;
+    }
+    else{
+        res.statusCode = 402;
+        res.write("Invalid user");
+        res.end();
+        return;
+    }
 })
 
 server.listen(3000,()=>{
