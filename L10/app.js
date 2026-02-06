@@ -34,6 +34,15 @@ app.post("/register",(req,res)=>{
     res.send("user register successfully!.. ");
 })
 
+app.get("/submit",(req,res)=>{
+    res.render("index1");
+});
+
+app.get("/submit",(req,res)=>{
+    console.log(req.query);
+    res.send("User register successfully using get method");
+})
+
 app.listen(3000,()=>{
     console.log("App is running at port 4000");
 });
